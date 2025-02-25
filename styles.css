@@ -1348,10 +1348,12 @@ body.dark-mode #backToTop:hover {
 
 body.dark-mode .jobs article {
 	background-color: #2d2d2d;
-  }
+}
   
-  body.dark-mode .chatbot-blue {
+body.dark-mode .chatbot-blue {
 	background-color: #2d2d2d;
-  }
+}
   
-  
+body.dark-mode .hero .hero-yellow p {
+	color: #000;
+}  
