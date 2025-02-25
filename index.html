@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Portfolio - Đặng Chí Bảo</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./styles.css">
+	<link rel="icon" type="image/jpg" href="./imgs/favicon.png">
+</head>
+<body>
+	<header>
+		<a href="#" class="logo-holder">
+			<div class="logo">B</div>
+			<div class="logo-text">Portfolio - Đặng Chí Bảo</div>
+		</a>
+		<nav>
+			<ul id="menu">
+				<li>
+					<a href="#">Trang chủ</a>
+				</li>
+				<li>
+					<a href="#knowledge">Hiểu biết</a>
+				</li>
+				<li>
+					<a href="#skills">Kỹ năng</a>
+				</li>
+				<li>
+					<a href="#projects">Dự án</a>
+				</li>
+				<li>
+					<a href="#chatbox">ChatBox</a>
+				</li>
+				<li>
+					<a href="#card">Danh thiếp</a>
+				</li>
+				<li class="theme-switch-container">
+					<img src="./imgs/moon.png" 
+						 alt="Theme Toggle" 
+						 id="themeIcon" 
+						 class="theme-icon"
+						 width="40" 
+						 height="40">
+				</li>
+			</ul>
+			<a href="#" class="mobile-toggle" onClick="toggleMobileMenu();">
+				<svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+					<path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h10"/>
+				</svg>
+			</a>
+		</nav>
+	</header>
+	<main>
+		<section class="hero container">
+			<div class="hero-yellow">
+				<div>
+					<h1><small>Xin chào, tôi là</small>
+						<span id="animatedName"></span>
+					</h1>
+					<p>
+						Là một người đam mê với công nghệ, tôi đã làm việc trong lĩnh vực phát triển nhiều loại phần mềm dựa trên các ngôn ngữ lập trình, nhờ đó hiểu rõ được nhiều loại phần mềm. Bản thân tôi cũng từng thuyết trình trước đội nhóm và tư vấn các dịch vụ phù hợp nhất cho từng tệp khách hàng. Ngoài ra, việc luôn luôn cập nhật các thông tin công nghệ và quá trình tìm hiểu các thiết bị phần cứng, mạng đã giúp nắm bắt cấu tạo và cách thức vận hành của nhiều sản phẩm khác nhau.</span>
+					</p>
+					<div class="call-to-action">
+						<a href="./cv.html" target="_blank" class="button black">
+							Xem CV
+						</a>
+						<a href="mailto:dcbao.dev@gmail.com" class="button white">
+							Liên hệ
+						</a>
+					</div>
+					<div class="social-links">
+						<a href="tel:+84349734840">
+							<img src="./imgs/phone.png" alt="Phone" width="48" />
+						</a>
+						<a href="mailto:dcbao.dev@gmail.com">
+							<img src="./imgs/mail.png" alt="Mail" width="48" />
+						</a>
+						<a href="https://github.com/canon-d2" target="_blank">
+							<img src="./imgs/github.png" alt="GitHub" width="48" />
+						</a>
+						<a href="https://www.linkedin.com/in/dcbao/" target="_blank">
+							<img src="./imgs/linkedin.png" alt="Linkedin" width="48" />
+						</a>
+						<a href="https://www.facebook.com/dcbaosgu/" target="_blank">
+							<img src="./imgs/fb.png" alt="Facebook" width="48" />
+						</a>
+						<a href="https://zalo.me/0349734840" target="_blank">
+							<img src="./imgs/zalo.png" alt="Zalo" width="48" />
+						</a>
+						<a href="https://dcbao.site" target="_blank">
+							<img src="./imgs/website.png" alt="Website" width="48" />
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="hero-green">
+				<img src="./imgs/hero-image.png" alt="Đặng Chí Bảo" width="100%" />
+			</div>
+		</section>
+		<section class="logos container">
+			<div class="marquee">
+				<div class="track">
+					<img src="./imgs/html.png" width="128" alt="HTML" />
+					<img src="./imgs/css.png" width="128" alt="CSS" />
+					<img src="./imgs/js.png" width="128" alt="JS" />
+					<img src="./imgs/drawio.png" width="128" alt="DrawIO" />
+					<img src="./imgs/nextjs.png" width="128" alt="NextJS" />
+					<img src="./imgs/nodejs.png" width="128" alt="NodeJS" />
+					<img src="./imgs/python.png" width="128" alt="Python" />
+					<img src="./imgs/mongo.png" width="128" alt="MongoDB" />
+					<img src="./imgs/sql.png" width="128" alt="SQL" />
+					<img src="./imgs/xampp.png" width="128" alt="Xampp" />
+					<img src="./imgs/linux.png" width="128" alt="Linux" />
+					<img src="./imgs/rabbitmq.png" width="128" alt="RabbitMQ" />
+					<img src="./imgs/aws.png" width="128" alt="Amazon" />
+					<img src="./imgs/gitlab.png" width="128" alt="Gitlab" />
+					<img src="./imgs/bun.png" width="128" alt="Bun" />
+					<img src="./imgs/postman.png" width="128" alt="Postman" />
+					<img src="./imgs/tele-api.png" width="128" alt="Telegram API" />
+					<!-- Lặp lại để nối đuôi liền mạch-->
+					<img src="./imgs/html.png" width="128" alt="HTML" />
+					<img src="./imgs/css.png" width="128" alt="CSS" />
+					<img src="./imgs/js.png" width="128" alt="JS" />
+					<img src="./imgs/drawio.png" width="128" alt="DrawIO" />
+					<img src="./imgs/nextjs.png" width="128" alt="NextJS" />
+					<img src="./imgs/nodejs.png" width="128" alt="NodeJS" />
+					<img src="./imgs/python.png" width="128" alt="Python" />
+					<img src="./imgs/mongo.png" width="128" alt="MongoDB" />
+					<img src="./imgs/sql.png" width="128" alt="SQL" />
+					<img src="./imgs/xampp.png" width="128" alt="Xampp" />
+					<img src="./imgs/linux.png" width="128" alt="Linux" />
+					<img src="./imgs/rabbitmq.png" width="128" alt="RabbitMQ" />
+					<img src="./imgs/aws.png" width="128" alt="Amazon" />
+					<img src="./imgs/gitlab.png" width="128" alt="Gitlab" />
+					<img src="./imgs/bun.png" width="128" alt="Bun" />
+					<img src="./imgs/postman.png" width="128" alt="Postman" />
+					<img src="./imgs/tele-api.png" width="128" alt="Telegram API" />
+				</div>
+			</div>
+		</section>
+		<section id="knowledge" class="knowledge container">
+			<h2>
+				Hiểu biết
+				<small style="margin-top: 15px;">Bản thân</small>
+			</h2>
+			<div class="holder-blue">
+				<div class="left-column">
+					<h3>Frontend & Backend</h3>
+					<ul>
+						<li>NextJS</li>
+						<li>NodeJS</li>
+						<li>Python</li>
+						<li>RESTful API</li>
+					</ul>
+					<h3>Database & Server</h3>
+					<ul>
+						<li>MySQL / SQLServer</li>
+						<li>MongoDB</li>
+						<li>Amazon</li>
+						<li>Linux</li>
+					</ul>
+					<h3>Other Skills</h3>
+					<ul>
+						<li>Software/Hardware Consulting</li>
+						<li>Design Diagram</li>
+					</ul>
+				</div>
+				<div class="right-column">
+					<h3>Hiểu rõ cấu trúc phần cứng, mạng</h3>
+					<p>
+						Giúp tư vấn đúng loại sản phẩm phù hợp với nhu cầu từng khách hàng.
+					</p>
+					<h3>Sử dụng đa hệ điều hành khác nhau</h3>
+					<p>
+						Hướng dẫn cài đặt và giới thiệu đúng loại phần mềm cho các đối tượng.
+					</p>
+					<h3>Kỹ năng giao tiếp, xử lý vấn đề</h3>
+					<p>
+						Nói ngắn gọn, lễ phép, tập trung vào trọng tâm vấn đề của khách hàng.
+					</p>
+					<h3>Tích cực tham gia các sự kiện</h3>
+					<p>
+						Tham gia các chương trình, học hỏi nhằm tiếp thu kiến thức mới.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="education container">
+			<div class="education-cards">
+			  <!-- Saigon University Card -->
+			  <div class="education-card sgu">
+				<div class="card-content">
+				  <h3>SAIGON UNIVERSITY</h3>
+				  <p class="highlight">Infomation Technology</p>
+				  <h4>GPA: 2.96/4.0</h4>
+				</div>
+				<div class="logo-circle">
+				  <img src="./imgs/sgu.png" alt="SGU Logo">
+				</div>
+			  </div>
+
+			  <!-- Hackathon Card -->
+			  <div class="education-card hackathon">
+				<div class="card-content">
+				  <h3>HACKATHON</h3>
+				  <p class="highlight">Chủ đề:</p>
+				  <h4>Ứng dụng bảo vệ môi trường</h4>
+				</div>
+				<div class="logo-circle">
+				  <img src="./imgs/hack24.png" alt="Hackathon Logo">
+				</div>
+			  </div>
+		  
+			  <!-- TOEIC Card -->
+			  <div class="education-card toeic">
+				<div class="card-content">
+				  <h3>TOEIC IIG</h3>
+				  <p class="highlight">Skill Basic</p>
+				  <h4>Listening & Reading</h4>
+				</div>
+				<div class="logo-circle">
+				  <img src="./imgs/iig.png" alt="TOEIC Logo">
+				</div>
+			  </div>
+			</div>
+		  </section>
+
+		<section id="skills" class="skills container">
+			<h2>
+				Kỹ năng
+				<small style="margin-top: 15px;">Làm việc</small>
+			</h2>
+			<div class="skills-grid">
+				<!-- Skill 1 -->
+				<div class="skill-item color-1">
+					<div class="icon-wrapper">
+						<img src="./imgs/server.png" alt="Web Design" class="skill-icon">
+					</div>
+					<h3>Manage Cloud Server</h3>
+					<p>Quản lý, cài đặt các dịch vụ EC2, Cloudfont, S3 trên máy chủ AWS, triển khai website trên server.</p>
+				</div>
+		
+				<!-- Skill 2 -->
+				<div class="skill-item color-2">
+					<div class="icon-wrapper">
+						<img src="./imgs/backend.png" alt="	Backend Developer" class="skill-icon">
+					</div>
+					<h3>Backend Development</h3>
+					<p>Lập trình các website dựa trên RESTful API hoặc tích hợp API từ các bên khác vào hệ thống.</p>
+				</div>
+		
+				<!-- Skill 3 -->
+				<div class="skill-item color-3">
+					<div class="icon-wrapper">
+						<img src="./imgs/it-sp.png" alt="IT Supports" class="skill-icon">
+					</div>
+					<h3>IT Supports</h3>
+					<p>Bảo trì, sửa chữa các lỗi liên quan đến phần mềm, phần cứng máy tính, cài đặt các hệ điều hành, driver,...</p>
+				</div>
+		
+				<!-- Skill 4 -->
+				<div class="skill-item color-4">
+					<div class="icon-wrapper">
+						<img src="./imgs/advise.png" alt="advise" class="skill-icon">
+					</div>
+					<h3>Tư vấn sản phẩm</h3>
+					<p>Tư vấn đến khách hàng những thiết bị, sản phẩm phù hợp dựa trên cơ sở mục tiêu, nhu cầu, ngân sách,...</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="work-experience container">
+			<h2>
+				Kinh nghiệm
+				<small style="margin-top: 15px;">Gần đây</small>
+			</h2>
+			<div class="jobs">
+				<article>
+					<figure>
+						<div>
+							<img src="./imgs/workplace-1.jpg" alt="Workplace 1 - Nghiên cứu luận văn" width="100%" />
+							<figcaption>
+								YOLOV8 & OCSORT
+							</figcaption>
+						</div>
+					</figure>
+					<h3>Nghiên cứu luận văn</h3>
+					<div>8/2024 - 1/2024</div>
+					<p>Hệ thống nhận diện và theo dõi thời gian thực dựa trên YOLO & OCSORT chống gian lận và tính điểm trong thi đấu Golf.</p>
+				</article>
+				<article>
+					<figure>
+						<div>
+							<img src="./imgs/workplace-2.jpg" alt="Workplace 2 - Quản lý dịch vụ hạ tầng" width="100%" />
+							<figcaption>
+								Manage - Domain, SSL, Hosting, VPS
+							</figcaption>
+						</div>
+					</figure>
+					<h3>Quản lý dịch vụ hạ tầng</h3>
+					<div>3/2024 - 7/2024</div>
+					<p>Lập trình chức năng với RESTful API giúp quản lý và thương mại các dịch vụ tên miền, SSL, Hosting, VPS,... </p>
+				</article>
+				<article>
+					<figure>
+						<div>
+							<img src="./imgs/workplace-3.jpg" alt="Workplace 3 - Thông báo giao dịch" width="100%" />
+							<figcaption>
+								Transaction processing
+							</figcaption>
+						</div>
+					</figure>
+					<h3>Thông báo giao dịch</h3>
+					<div>7/2024 - 8/2024</div>
+					<p>Xây dựng đầu bắn IPN thông tin giao dịch các ngân hàng, thống kê tính tổng tiền giao dịch và gửi mail tự động.</p>
+				</article>
+				
+			</div>
+		</section>
+		<section id="projects" class="bento container">
+			<h2>
+				Các dự án
+				<small style="margin-top: 15px;">Thực hiện</small>
+			</h2>
+			<div class="bento-grid">
+				<a href="https://dungolf.com/" target="_blank" class="bento-item">
+					<img src="./imgs/golf-eco.png" alt="Golf ecosystem" width="100%" />
+					<div class="caption">Hệ thống Golf Game, Golf Booking, Golf Course</div>
+				</a>
+				<a href="https://www.facebook.com/TuoitrekhoaCongngheThongtinSGU/posts/-hackathon-sgu-2024-v%C3%B2ng-lo%E1%BA%A1i-hi%E1%BB%87n-t%E1%BA%A1i-v%C3%B2ng-lo%E1%BA%A1i-c%E1%BB%A7a-cu%E1%BB%99c-thi-hackathon-sgu-2024/904648921448661/" target="_blank" class="bento-item">
+					<img src="./imgs/hackathon.jpg" alt="Hackathon" width="100%" />
+					<div class="caption">Giải Hackathon cấp trường - Đề tài phân loại rác</div>
+				</a>
+				<a href="https://github.com/Canon-D2/QuanLyNhacCu_JPA" target="_blank" class="bento-item">
+					<img src="./imgs/music.png" alt="Music Website" width="100%" />
+					<div class="caption">Website bán nhạc cụ</div>
+				</a>
+				<a href="https://github.com/Canon-D2/SGUCoffeeApp" target="_blank" class="bento-item">
+					<img src="./imgs/coffee.png" alt="App Coffee" width="100%" />
+					<div class="caption">App đặt cà phê</div>
+				</a>
+				<a href="https://gitlab.com/tbclab/artificial-intelligence/cv/golflott-server" target="_blank" class="bento-item">
+					<img src="./imgs/golf-ai.png" alt="Golf Vision" width="100%" />
+					<div class="caption">AI giám sát thi đấu Golf</div>
+				</a>
+			</div>
+		</section>
+
+		<section id="chatbox" class="chatbot container">
+			<h2>
+			  Giả lập Chatbot
+			  <small style="margin-top: 15px;">Nói chuyện với tôi</small>
+			</h2>
+			<div class="chatbot-blue">
+			  <div class="chat-info">
+				<h2 class="chatbox-title">Nói chuyện <span class="highlight">với tôi</span></h2>
+				<p>Đây là một hộp thoại nhắn tin sử dụng API từ Google Gemini, trong đó dữ liệu để prompt các câu trả lời một phần đến từ sơ yếu lý lịch của tôi.</p>
+				<p>Bạn có thể gửi bất kì tin nhắn nào để nhận các câu trả lời từ AI, lưu ý câu trả lời chỉ mang tính tham khảo và không phản ánh đúng thực tế.</p>
+				<p>Sử dụng mô hình gemini-2.0-flash sinh văn bản (Output 70 token). Dữ liệu trò chuyện chỉ cache tại trình duyệt, không chia sẻ với tôi và không được lưu trữ tại Google AI Studio. (API Xây dựng cuộc trò chuyện tương tác)</p>
+				<div style="text-align: center">
+				  <a href="./cv-dangchibao.pdf" class="button black">Tải sơ yếu lý lịch PDF</a>
+				</div>
+			  </div>
+			  <div class="chat-box">
+				<div class="chat-header">
+				  <button id="clear-chat" class="button small">Xóa tất cả</button>
+				</div>
+				<div id="notification" class="notification"></div>
+				<div class="scroll-area">
+				  <ul id="chat-log">
+					<!-- Chat messages will be added here dynamically -->
+				  </ul>
+				</div>
+				<div class="chat-message">
+				  <input type="text" id="user-input" placeholder="Nhập bất kì điều gì bạn muốn hỏi?">
+				  <button id="send-button" class="button black">Gửi</button>
+				</div>
+			  </div>
+			</div>
+		  </section>
+
+		<!-- Weather Widget for Ho Chi Minh City -->
+		<div class="weather-container">  
+			<a class="weatherwidget-io" 
+				href="https://forecast7.com/en/10d75106d68/ho-chi-minh/" 
+				data-label_1="HO CHI MINH" 
+				data-label_2="WEATHER" 
+				data-font="Georgia" 
+				data-mode="Current" 
+				data-days="3" 
+				data-theme="pure" 
+				data-highcolor="#fa4242">HO CHI MINH WEATHER
+			</a>
+		</div>
+
+		<section id="card" class="contact container">
+			<div class="contact-wrapper">
+			  <div class="contact-info">
+				<h2 class="contact-title">Danh thiếp <span class="highlight">liên hệ</span></h2>
+				<div class="contact-card">
+				  <div class="contact-detail">
+					<h3>Điện thoại</h3>
+					<p>(+84) 034 973 4840</p>
+				  </div>
+				  <div class="contact-detail">
+					<h3>Email</h3>
+					<p>dcbao.dev@gmail.com</p>
+				  </div>
+				  <div class="contact-detail">
+					<h3>Địa chỉ</h3>
+					<p>An Dương Vương, Quận 5<br/>TP.Hồ Chí Minh<br/>Việt Nam</p>
+				  </div>
+				</div>
+			  </div>
+			  <div class="map-container">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15678.174604081967!2d106.67293474633672!3d10.769610530058117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f1b7c3ed289%3A0xa06651894598e488!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBTw6BpIEfDsm4!5e0!3m2!1svi!2s!4v1739899505955!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			  </div>
+			</div>
+		  </section>
+	</main>
+	<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+
+	<div class="floating-icons">
+		<a href="mailto:dcbao.dev@gmail.com" target="_blank" class="icon gmail" target="_blank">
+			<img src="./imgs/mail_ring.png" alt="Gmail" width="90">
+		</a>
+		<a href="https://zalo.me/0349734840" target="_blank" class="icon zalo" target="_blank">
+			<img src="./imgs/zalo_ring.png" alt="Zalo" width="80">
+		</a>
+	</div>
+
+	<button id="backToTop" title="Trở về đầu trang">↑</button>
+	<script src="./scripts.js"></script>
+</body>
+
+<footer>
+    <div class="copyright">
+        Copyright © 2025 . Portfolio designed and programmed by 
+        <a href="https://facebook.com/dcbaosgu" target="_blank">
+			Bảo Đặng
+            <img src="./imgs/sgu.png" 
+                 alt="SGU Logo" 
+                 style="width: 30px; vertical-align: middle; margin-bottom: 5px;">
+        </a>. All Rights Reserved.
+    </div>
+</footer>
+</html>
+
+
+
+

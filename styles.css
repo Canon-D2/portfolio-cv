@@ -1,0 +1,1347 @@
+*, *::before, *::after {
+	box-sizing: border-box;
+	margin:0;
+	padding:0;
+}
+
+:root {
+	--base: #555;
+	--base-100: #f1f1f1;
+	--base-400: #555;
+	--base-800: #000;
+	--yellow: #ffda4b;
+	--yellow-100: #fffbe6;
+	--yellow-400: #ffda4b;
+	--yellow-800: #8b6f00;
+	--blue: #0a61ae;
+	--blue-100: #e2f8ff;
+	--blue-400: #61dafb;
+	--blue-800: #0a61ae;
+}
+
+body {
+	font-family: "Open Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+	font-size: 20px;
+	padding-bottom:30px;  /* Khoảng cách từ cuối footer xuống dưới */
+}
+
+a {
+	text-decoration: none;
+	color: var(--blue);
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+header {
+	padding-top:10px;
+	padding-bottom:10px;
+	display:flex;
+	justify-content:space-between;
+	max-width:1440px;
+	margin:auto;
+	border-radius: 20px;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+
+	.logo-holder {
+		display:flex;
+		padding:10px;
+		align-items:center;
+		font-weight:600;
+		color: var(--base-800);
+		
+		.logo {
+			display:flex;
+			align-items:center;
+			justify-content:center;
+			font-size:32px;
+			background-color: var(--base-800);
+			color: var(--base-100);
+			height:64px;
+			width:64px;
+			margin-right:20px;
+			border-radius:50%;
+		}
+		.logo-text {
+			flex:1;
+		}
+	}
+
+	nav {
+		display:flex;
+		align-items:center;
+		ul {
+			display:flex;
+			list-style-type: none;
+			gap:5px;
+			li {
+				display:inline-block;
+				a {
+					display:inline-block;
+					padding:10px 20px;
+					color:var(--base);
+					&:hover {
+						background-color: var(--base-100);
+						border-radius:10px;
+						text-decoration:none;
+					}
+				}
+			}
+		}
+		.mobile-toggle {
+			display:none;
+			color:var(--base-800);
+			padding:10px;
+			@media (max-width:768px){
+				display:inline-block;
+				position:absolute;
+				top:20px;
+				right:20px;
+			}
+		}
+	}
+
+	@media (max-width: 1024px) {
+		flex-direction:column;
+		align-items:center;
+	}
+
+	@media (max-width: 768px) {
+		flex-direction:column;
+		align-items:center;
+		nav {
+			margin-top:10px;
+			width:100%;
+			ul {
+				display:none;
+				flex-direction:column;
+				text-align:center;
+				width:100%;
+				a {
+					width:100%;
+				}
+				&.active {
+					display:flex;
+				}
+			}
+		}
+	}
+}
+
+section {
+	max-width:1440px;
+	margin:auto;
+	gap:30px;
+	margin-top:30px;
+	margin-bottom:30px;
+
+	@media (max-width:1440px){
+		padding-left:30px;
+		padding-right:30px;
+	}
+}
+
+.button {
+	display:inline-block;
+	padding:10px 30px;
+	background-color: var(--blue);
+	color: var(--base-100);
+	border-radius:10px;
+	transition: ease 0.3s all;
+	&:hover {
+		text-decoration:none;
+		background-color: var(--base-800);
+	}
+	&.white {
+		background-color: white;
+		color: var(--base-800);
+		&:hover {
+			background-color: var(--base-100);
+			color: var(--base);
+		}
+	}
+	&.black {
+		background-color: black;
+		color: white;
+		&:hover {
+			background-color: var(--base);
+			color: var(--base-100);
+		}
+	}
+}
+
+h1 {
+	font-size:64px;
+	line-height:1;
+	margin-bottom:10px;
+	small {
+		display:block;
+		font-weight:100;
+	}
+	@media (max-width:1024px){
+		font-size:48px;
+	}
+}
+
+.hero {
+	display:flex;
+	@media (max-width:1024px){
+		flex-direction:column;
+	}
+	.hero-yellow {
+		flex:1;
+		background-color: #f1fe7b;
+		border-radius:30px;
+		padding:30px;
+		display:flex;
+		flex-direction:column;
+		justify-content:center;
+		span {
+			@media (max-width:768px){
+				display:none;
+			}
+		}
+		.call-to-action {
+			margin-top:20px;
+			margin-bottom:10px;
+			a {
+				margin-right:10px;
+				margin-bottom:10px;
+			}
+		}
+		.social-links {
+			a {
+				&:hover {
+					text-decoration:none;
+				}
+			}
+		}
+	}
+	.hero-green {
+		flex:1;
+		background-color: #73f961;
+		border-radius:30px;
+		padding:0px 30px;
+		display:flex;
+		justify-content:center;
+		align-items:flex-end;
+		img {
+			margin-top:-60px;
+			max-width:420px;
+			margin-bottom:-10px;
+		}
+	}
+}
+
+.logos {
+	background-color: var(--base-100);
+	border-radius:30px;
+	padding:30px 0px;
+	@media (max-width:1440px){
+		border-radius:0px;
+	}
+	.marquee {
+		width:100vw;
+		max-width:100%;
+		height:128px;
+		overflow:hidden;
+		position:relative;
+		.track {
+			position:absolute;
+			white-space:nowrap;
+			will-change:transform;
+			animation: marquee 40s linear infinite;
+			display:flex;
+			gap:10px;
+		}
+	}
+}
+
+@keyframes marquee {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-50%);
+	}
+}
+
+h2 {
+	font-size:48px;
+	line-height:1;
+	margin-bottom:10px;
+	text-align:center;
+	color: var(--base-800);
+	padding:30px;
+	small {
+		display:block;
+		font-weight:100;
+		font-size:0.5em;
+		color:var(--base);
+	}
+	@media (max-width:1024px){
+		font-size:30px;
+	}
+}
+
+h3 {
+	font-size:32px;
+	font-weight:600;
+	line-height:1;
+	margin-bottom:20px;
+	color: var(--base-800);
+}
+
+.knowledge {
+	.holder-blue {
+		background-color: var(--blue-100);
+		border-radius:30px;
+		padding:30px;
+		display:flex;
+		@media(max-width:1024px){
+			flex-direction:column;
+		}
+		.left-column {
+			flex:1;
+			ul {
+				list-style-type: none;
+				gap:10px;
+				margin-right:100px;
+				margin-bottom:20px;
+				li {
+					display:inline-block;
+					background-color: var(--blue-400);
+					padding:10px 20px;
+					border-radius:15px;
+					margin-bottom:10px;
+				}
+			}
+		}
+		.right-column {
+			flex:1;
+			p {
+				margin-bottom:20px;
+			}
+		}
+	}
+}
+
+/* EDUCATION CARDS SECTION */
+.education {
+	margin-top: 30px;
+  }
+  
+.education-cards {
+	display: flex;
+	gap: 30px;
+	justify-content: space-between;
+}
+
+.education-card {
+	flex: 1;
+	padding: 30px;
+	border-radius: 15px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+  
+/* Card specific colors */
+.education-card.sgu {
+	background-color: #519ae9;	
+}
+  
+.education-card.toeic {
+	background-color: #eae84e;
+}
+  
+.education-card.hackathon {
+	background-color: #54f178;
+}
+  
+.card-content {
+	color: white;
+}
+  
+.card-content h3 {
+	font-size: 32px; /* Tăng kích thước tiêu đề */
+	font-weight: bold;
+	margin-bottom: 15px;
+	color: white;
+	text-transform: uppercase; /* Chữ in hoa */
+}
+  
+.card-content p {
+	font-size: 22px; /* Tăng kích thước text */
+	margin-bottom: 8px;
+	color: white; /* Màu trắng đậm cho text */
+}
+  
+.card-content .highlight {
+	color: #ef4242; /* Màu đỏ nhạt cho Software Engineering */
+	font-weight: bold;
+}
+  
+.logo-circle {
+	background: white;
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px;
+}
+  
+.logo-circle img {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+}
+  
+/* Responsive design - giữ layout ngang trên mobile */
+@media (max-width: 768px) {
+	.education-cards {
+	  flex-direction: row; /* Giữ layout ngang */
+	  overflow-x: auto; /* Cho phép scroll ngang */
+	  padding-bottom: 20px; /* Thêm padding cho thanh scroll */
+	  gap: 15px; /* Giảm khoảng cách giữa các card */
+	}
+  
+	.education-card {
+	  min-width: 280px; /* Đặt chiều rộng tối thiểu cho mỗi card */
+	  padding: 20px;
+	}
+  
+	.card-content h3 {
+	  font-size: 24px; /* Giảm kích thước tiêu đề trên mobile */
+	}
+  
+	.card-content p {
+	  font-size: 18px; /* Giảm kích thước text trên mobile */
+	}
+  
+	.logo-circle {
+	  width: 80px; /* Giảm kích thước logo trên mobile */
+	  height: 80px;
+	}
+  
+	.logo-circle img {
+	  width: 60px;
+	  height: 60px;
+	}
+  }
+  
+  /* Thêm style cho màn hình nhỏ hơn */
+  @media (max-width: 480px) {
+	.education-cards {
+	  gap: 10px;
+	}
+  
+	.education-card {
+	  min-width: 250px;
+	  padding: 15px;
+	}
+  
+	.card-content h3 {
+	  font-size: 20px;
+	  margin-bottom: 10px;
+	}
+  
+	.card-content p {
+	  font-size: 16px;
+	}
+  }
+
+.work-experience {
+	.jobs {
+		display:flex;
+		gap:30px;
+		@media(max-width:1024px){
+			flex-direction:column;
+		}
+		article {
+			background-color: #f7d6d6;
+			padding:30px;
+			border-radius:30px;
+			flex:1;
+			h3 {
+				margin-top:20px;
+				margin-bottom:10px;
+			}
+			div {
+				font-weight:600;
+				margin-bottom:5px;
+				color: var(--base-800);
+			}
+			p {
+				margin-bottom:10px;
+			}
+			figure {
+				width:100%;
+				padding-top:56.25%;
+				overflow:hidden;
+				position:relative;
+				border-radius:15px;
+				img {
+					position:absolute;
+					top:0;
+					left:0;
+					height:100%;
+					object-fit:cover;
+					transition: ease 3s all;
+				}
+				figcaption {
+					position:absolute;
+					bottom:0;
+					left:0;
+					right:0;
+					background-color: rgba(0,0,0,0.5);
+					color: var(--base-100);
+					text-align:center;
+					padding:10px;
+					opacity:0;
+					visibility:hidden;
+					transition: ease 0.3s all;
+				}
+
+				&:hover {
+					figcaption {
+						opacity:1;
+						visibility:visible;
+					}
+					img {
+						transform: scale(1.2);
+					}
+				}
+
+			}
+		}
+	}
+}
+
+.bento {
+	.bento-grid {
+		display: grid;
+		grid-gap: 30px;
+		grid-template-columns: repeat(5, 1fr);
+		grid-template-rows: repeat(2, 1fr); /* Changed from 4 to 3 rows */
+		height: 600px; /* Adjusted height since we removed one row */
+		@media (max-width: 1024px) {
+		  grid-template-rows: repeat(6, 1fr); /* Adjusted for responsive layout */
+		}
+		@media (max-width: 768px) {
+		  display: flex;
+		  flex-direction: column;
+		  gap: 30px;
+		  height: auto;
+		}
+		.bento-item {
+			padding:30px;
+			background-color: var(--base-100);
+			border-radius:15px;
+			position:relative;
+			overflow:hidden;
+			img {
+				position:absolute;
+				top:0;
+				left:0;
+				height:100%;
+				object-fit:cover;
+				transition: ease 3s all;
+			}
+			&:hover {
+				img {
+					transform: scale(1.2);
+				}
+			}
+			@media(max-width:768px){
+				height:240px;
+			}
+			&:nth-child(1) {
+				grid-column: span 2;
+				grid-row: span 2;
+				@media(max-width:1024px){
+					grid-column: span 2;
+					grid-row: span 2;
+				}
+			}
+			&:nth-child(2) {
+				grid-column: span 2;
+				grid-row: span 1;
+				@media(max-width:1024px){
+					grid-column: span 3;
+					grid-row: span 2;
+				}
+			}
+			&:nth-child(3) {
+				grid-column: span 1;
+				grid-row: span 1;
+				@media(max-width:1024px){
+					grid-column: span 3;
+					grid-row: span 2;
+				}
+			}
+			&:nth-child(4) {
+				grid-column: span 1;
+				grid-row: span 1;
+				@media(max-width:1024px){
+					grid-column: span 2;
+					grid-row: span 4;
+				}
+			}
+			&:nth-child(5) {
+				grid-column: span 2;
+				grid-row: span 1;
+				@media(max-width:1024px){
+					grid-column: span 3;
+					grid-row: span 2;
+				}
+			}
+		}
+	}
+}
+
+/* CHATBOX SECTION */
+
+.chatbot {
+	.chatbot-blue {
+		background-color: #d0e2fa;
+		border-radius:30px;
+		padding:30px;
+		gap:30px;
+		display:flex;
+		@media (max-width:1024px){
+			flex-direction:column;
+		}
+		p {
+			margin-bottom:30px;
+		}
+		.chat-info {
+			flex:3;
+			padding-right:30px;
+		}
+		.chat-box {
+			flex:4;
+			background:white;
+			border-radius:15px;
+			padding:30px;
+			display:flex;
+			flex-direction:column;
+			.scroll-area {
+				max-height:300px;
+				height:300px;
+				overflow-y:scroll;
+				ul {
+					display:flex;
+					flex-direction:column;
+					justify-content:flex-end;
+					gap:15px;
+					li {
+						display:flex;
+						align-items:center;
+						gap:15px;
+
+						&:nth-child(even){
+							text-align:right;
+							justify-content:flex-end;
+							flex-direction:row-reverse;
+							span {
+								background-color: var(--yellow);
+							}
+						}
+
+						span {
+							background-color: var(--blue-400);
+							width:64px;
+							height:64px;
+							border-radius:50%;
+							display:inline-flex;
+							align-items:center;
+							justify-content:center;
+							@media(max-width:768px){
+								width:48px;
+								height:48px;
+							}
+						}
+						div {
+							flex:1;
+						}
+					}
+				}
+			}
+
+			.chat-message {
+				display:flex;
+				margin-top:45px;
+				gap:15px;
+				input {
+					font-size: 18px;
+					border-radius:10px;
+					flex:1;
+					padding:15px;
+					border:1px solid transparent;
+					background-color: var(--base-100);
+					&:hover {
+						outline:none;
+						background-color:white;
+						border:1px solid var(--base-100);
+					}
+					&:focus {
+						outline:none;
+						background-color:white;
+						border:1px solid var(--base-100);
+					}
+				}
+				button {
+					border:none;
+					cursor:pointer;
+				}
+			}
+			@media (max-width: 768px) {
+				.chat-message {
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					margin-top: 25px;
+				}
+			
+				.chat-message input {
+					width: 70%;
+					font-size: 16px;
+					padding: 14px; /* Tăng padding để chiều cao lớn hơn */
+					height: 50px; /* Đặt chiều cao cố định */
+					flex: 1;
+				}
+			
+				.chat-message button {
+					width: 30%;
+					padding: 14px;
+					height: 50px; /* Đảm bảo cùng chiều cao với input */
+					text-align: center;
+					flex-shrink: 0;
+				}
+			}
+		}
+		/* Tùy chỉnh nút Gửi trong chatbox */
+		.chat-box .button.black {
+			font-size: 20px;         /* Tăng kích thước chữ */
+			font-weight: bold;       /* In đậm */
+			padding: 15px 30px;      /* Tăng padding cho nút to hơn */
+			transition: all 0.3s ease; /* Hiệu ứng mượt */
+		}
+
+		/* Hiệu ứng hover */
+		.chat-box .button.black:hover {
+			background-color: #094a8a !important; /* Màu nền khi hover */
+			transform: translateY(-2px);         /* Hiệu ứng nổi lên */
+			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Đổ bóng */
+		}
+	}
+}
+
+.chatbox-title {
+	text-align: center; /* Changed from left to center */
+	padding: 0;
+	margin-bottom: 30px;
+  
+	@media (max-width: 1024px) {
+	  margin-left: 0; /* Remove left margin on mobile */
+	}
+  }
+  
+  .chatbox-title .highlight {
+	color: rgb(48, 13, 174);
+  }
+
+  .chat-header {
+	display: flex;
+	justify-content: flex-end;
+	padding: 10px;
+  }
+  
+  .button.small {
+	font-size: 14px;
+	padding: 5px 10px;
+	background-color: #f44336;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	margin-top:-20px;
+  }
+  
+  .button.small:hover {
+	background-color: #d32f2f;
+  }
+
+  .notification {
+	background-color: #4CAF50;
+	color: white;
+	text-align: center;
+	padding: 10px;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	display: none;
+  }
+  
+  .thinking {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 10px;
+	margin-bottom: 10px;
+  }
+  
+  .thinking .message {
+	background-color: #f1f1f1;
+	padding: 10px 15px;
+	border-radius: 15px;
+	font-style: italic;
+	color: #666;
+	max-width: 200px; /* Giảm chiều ngang tối đa */
+	width: auto; /* Tự động co giãn theo nội dung */
+	padding: 8px 12px; /* Giảm padding cho gọn */
+	margin-left: auto; /* Căn phải để avatar không bị đẩy */
+	}
+  
+  .thinking .avatar {
+	background-color: #ffd700;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  }
+  
+  /* Cập nhật style cho notification */
+  .notification {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	background-color: #4CAF50;
+	color: white;
+	padding: 10px 20px;
+	border-radius: 5px;
+	display: none;
+	z-index: 1000;
+	animation: slideIn 0.3s ease;
+  }
+  
+  @keyframes slideIn {
+	from {
+	  transform: translateX(100%);
+	  opacity: 0;
+	}
+	to {
+	  transform: translateX(0);
+	  opacity: 1;
+	}
+  }
+
+
+/* PEOJECT CONTENT SECTION */
+
+.bento-item {
+    position: relative;
+    overflow: hidden;
+    display: block;
+}
+
+.bento-item img {
+    transition: transform 0.3s ease;
+}
+
+.bento-item .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.bento-item:hover img {
+    transform: scale(1.1);
+}
+
+.bento-item:hover .caption {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* NAME TYPING SECTION */
+
+h1 small {
+    color: #800080;
+    font-weight: bold;
+}
+#animatedName {
+    color: #0505d4;
+}
+
+#animatedName {
+	display: inline-block;
+	position: relative;
+	white-space: nowrap;
+}
+
+#animatedName::after {
+	content: "|";
+	animation: blink 1s infinite;
+	opacity: 1;
+}
+
+@keyframes blink {
+	0%, 100% { opacity: 1; }
+	50% { opacity: 0; }
+}
+
+/* CARD CONTACT SECTION */
+
+.contact {
+	margin-top: 50px;
+  }
+  
+  .contact-wrapper {
+	background: #c8ffb9;
+	border-radius: 30px;
+	padding: 40px;
+	display: flex;
+	gap: 40px;
+  
+	@media (max-width: 1024px) {
+	  flex-direction: column;
+	  padding: 20px;
+	  gap: 30px; /* Added explicit gap for mobile */
+	}
+  }
+  
+  .contact-info {
+	flex: 1;
+  }
+  
+  .contact-title {
+	text-align: center; /* Changed from left to center */
+	padding: 0;
+	margin-bottom: 30px;
+  
+	@media (max-width: 1024px) {
+	  margin-left: 0; /* Remove left margin on mobile */
+	}
+  }
+  
+  .contact-title .highlight {
+	color: purple;
+  }
+  
+  .contact-card {
+	background: linear-gradient(135deg, #3f479e 0%, #e46d6d 50%, #ffd700 100%);
+	color: white;
+	padding: 30px;
+	border-radius: 15px;
+	width: 100%; /* Changed from 95% to 100% */
+	min-height: 300px; /* Added minimum height */
+  
+	@media (max-width: 1024px) {
+	  padding: 30px;
+	  margin: 0 auto; /* Center the card */
+	}
+  }
+  
+  .contact-detail {
+	margin-bottom: 25px;
+  }
+  
+  .contact-detail:last-child {
+	margin-bottom: 0;
+  }
+  
+  .contact-detail h3 {
+	color: #fff; /* Changed from #999 to white for better contrast on gradient */
+	font-size: 30px;
+	margin-bottom: 5px;
+	margin-left: 30px;
+	@media (max-width: 1024px) {
+		font-size: 20px;
+	}
+  }
+  
+  .contact-detail p {
+	font-size: 20px;
+	line-height: 1.5;
+	margin-left: 30px;
+	@media (max-width: 1024px) {
+		font-size: 15px;
+	}
+  }
+  
+  .map-container {
+	flex: 1.5;
+	height: 440px;
+	border-radius: 15px;
+	overflow: hidden;
+  }
+  .map-container iframe {
+	width: 100%;
+	height: 100%;
+  }
+
+
+/* ICON MAIL & ZALO RING */
+
+.floating-icons {
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	z-index: 1000;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.floating-icons .icon {
+	animation: ring 1.5s infinite ease-in-out;
+	transition: transform 0.3s;
+}
+
+.floating-icons .icon:hover {
+	animation: none;
+	transform: scale(1.1);
+}
+
+@keyframes ring {
+	0% { transform: rotate(0deg); }
+	25% { transform: rotate(15deg); }
+	50% { transform: rotate(-15deg); }
+	75% { transform: rotate(10deg); }
+	100% { transform: rotate(0deg); }
+}
+
+
+/* 4 SKILLS SECTION */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.skill-item {
+    padding: 40px 30px;
+    border-radius: 20px;
+    min-height: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.color-1 { background: #4595ea; } 
+.color-2 { background: #43ee6b; }  
+.color-3 { background: #f65f6e; }  
+.color-4 { background: #f1ca53; }  
+
+.icon-wrapper {
+    width: 160px;
+    height: 160px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 35px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.skill-icon {
+    width: 140px;  /* Tăng kích thước icon */
+    height: 140px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.skill-item h3 {
+    color: white;  /* Chữ trắng cho tất cả khung */
+    margin-bottom: 25px;
+    font-size: 30px;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.skill-item p {
+    color: rgba(255, 255, 255, 0.9);  /* Chữ trắng trong suốt */
+    line-height: 1.7;
+    font-size: 20px;
+    padding: 0 10px;
+    flex-grow: 1;
+}
+
+.skill-item:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .skill-item {
+        min-height: 380px; /* Giảm 40px */
+        padding: 25px 15px;
+        border-radius: 15px;
+    }
+    
+    .icon-wrapper {
+        width: 150px; /* Tăng từ 80px */
+        height: 150px;
+        margin-bottom: 20px; /* Giảm khoảng cách */
+        border-radius: 20px;
+    }
+    
+    .skill-icon {
+        width: 120px; /* Tăng từ 50px */
+        height: 120px;
+    }
+    
+    .skill-item h3 {
+        font-size: 25px; /* Tăng từ 20px */
+        margin-bottom: 15px;
+    }
+    
+    .skill-item p {
+        font-size: 18px; /* Tăng từ 14px */
+        line-height: 1.6;
+        padding: 0 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .skill-item {
+        min-height: 350px; /* Giảm thêm cho màn hình nhỏ */
+        padding: 20px 10px;
+    }
+    
+    .icon-wrapper {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .skill-icon {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* FOOTER SECTION */
+
+.copyright {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-size: 1em;
+    border-top: 1px solid #ddd;
+    margin-top: 50px;
+	font-weight: bold;
+}
+
+/* BACK TO TOP BUTTON */
+#backToTop {
+    display: none;
+    position: fixed;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #0a61ae;
+    color: white;
+    cursor: pointer;
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-size: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+#backToTop:hover {
+    background-color: #094a8a;
+    transform: translateX(-50%) scale(1.1);
+}
+
+
+/* DARKMODE BUTTON & COMPATIBLE CONPONENT */
+
+.theme-switch-container {
+    margin-left: -15px !important; /* Kéo sang trái */
+    display: flex !important;
+    align-items: center !important; /* Căn giữa theo chiều dọc */
+    height: 100%; /* Chiếm full chiều cao của menu */
+    padding: 0 30px !important; /* Thêm khoảng trống hai bên */
+}
+@media (max-width: 768px) {
+	.theme-switch-container {
+		margin-left: 0 !important;
+		justify-content: center;
+		padding: 10px 0 !important;
+	}
+}
+
+.theme-icon {
+    transition: all 0.3s ease;
+    transform: scale(1.3); /* Phóng to thêm 30% */
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.theme-icon:hover {
+    transform: scale(1.5) translateY(-1px); /* Hiệu ứng nổi */
+    filter: drop-shadow(0 3px 6px rgba(0,0,0,0.15));
+}
+
+  
+body.dark-mode {
+	--base: #888;
+	--base-100: #333;
+	--base-400: #888;
+	--base-800: #fff;
+	--yellow: #ffda4b;
+	--yellow-100: #333;
+	--yellow-400: #ffda4b;
+	--yellow-800: #ffda4b;
+	--blue: #61dafb;
+	--blue-100: #333;
+	--blue-400: #61dafb;
+	--blue-800: #61dafb;
+	--pink: #444;
+	background-color: #1a1a1a;
+	color: #fff;
+}
+  
+body.dark-mode header {
+	background-color: #333;
+	border-bottom: 1px solid #444;
+}
+  
+body.dark-mode .logo-holder {
+	color: #fff;
+}
+  
+body.dark-mode nav ul li a {
+	color: #fff;
+}
+
+body.dark-mode .chat-box {
+    background: #000 !important;
+    border: 1px solid #333;
+}
+
+body.dark-mode .chat-box .message {
+    color: #fff !important;
+}
+
+body.dark-mode .chat-box .button.black {
+    background-color: var(--blue-400) !important;
+    color: var(--base-800) !important;
+    border: 2px solid var(--blue-400);
+}
+
+body.dark-mode .chat-box .button.black:hover {
+    background-color: var(--blue-800) !important;
+    color: white !important;
+}
+
+body.dark-mode .chat-message input {
+    background-color: #333 !important;
+    color: white !important;
+    border: 1px solid #555 !important;
+}
+
+body.dark-mode .chat-box .avatar {
+    color: #000 !important;
+}
+
+/* Custom scrollbar cho dark mode */
+body.dark-mode .scroll-area::-webkit-scrollbar {
+    width: 8px;
+}
+
+body.dark-mode .scroll-area::-webkit-scrollbar-track {
+    background: #222;
+}
+
+body.dark-mode .scroll-area::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 4px;
+}
+
+/* Dark mode cho danh thiếp liên hệ */
+body.dark-mode .contact-wrapper {
+    background: #333 !important; /* Nền tối */
+}
+
+body.dark-mode .contact-card {
+    background: linear-gradient(135deg, #2c2c2c 0%, #444 50%, #666 100%) !important;
+    color: #fff !important; /* Chữ trắng */
+}
+
+body.dark-mode .contact-title,
+body.dark-mode .contact-title .highlight {
+    color: #fff !important; /* Tiêu đề trắng */
+}
+
+body.dark-mode .contact-detail h3 {
+    color: #ccc !important; /* Tiêu đề phụ xám nhạt */
+}
+
+body.dark-mode .contact-detail p {
+    color: #fff !important; /* Nội dung trắng */
+}
+
+body.dark-mode .map-container iframe {
+    filter: invert(90%) hue-rotate(180deg); /* Đảo màu bản đồ cho phù hợp */
+}
+
+/* Dark mode cho nút liên hệ */
+body.dark-mode .button.white {
+    color: #000 !important;  /* Chữ màu đen */
+    background-color: white !important;  /* Giữ nền trắng */
+}
+
+body.dark-mode .button.white:hover {
+    background-color: black !important;  /* Màu hover nhạt hơn */
+    color: #fff !important;
+}
+
+/* Sửa phần thinking trong dark mode */
+body.dark-mode .thinking .message {
+	background-color: #333 !important; /* Màu nền tối */
+	color: #fff !important; /* Chữ trắng */
+}
+
+/* Dark mode cho nút back to top */
+body.dark-mode #backToTop {
+    background-color: #e4edefc5;
+    color: #1a1a1a;
+}
+
+body.dark-mode #backToTop:hover {
+    background-color: #63caec;
+}
