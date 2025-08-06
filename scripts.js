@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const notification = document.getElementById('notification');
     let isFirstMessage = true;
 
-    const prompt = "Dựa vào CV sau, tự xem mình là ứng viên với các thông tin gồm: Là sinh viên mới tốt nghiệp tên Đặng Chí Bảo cần ứng tuyển vị trí Software Engineering tại quý công ty, hiện tốt nghiệp chuyên ngành Kỹ thuật phần mềm, đam mê công nghệ, phát triển phần mềm trên nhiều nền tảng, có khả năng tư duy tốt và thích nghiên cứu công nghệ mới, có thể tư vấn công nghệ tốt. Học vấn: Đại học Sài Gòn. Kinh nghiệm: Khóa luận sử dụng OC-SORT & YOLOv8, thực tập Backend tại MONA HOST trong đó xây dựng RESTful API, xử lý giao dịch thanh toán online. Kỹ năng: Manage Cloud Server, IT Supports, tư vấn sản phẩm, làm việc nhóm, kỹ năng giao tiếp. Bằng cấp: Đại học SGU (GPA 2.96/4), giải Hackathon cấp trường, TOEIC nghe đọc. Liên hệ: Phone: 0349734840, dcbao.dev@gmail.com. Hỏi tên thì chỉ trả lời tên, hỏi dự án thì chỉ trả lời dự án,... tránh trả lời thông tin không liên quan.";
+    const prompt = "Based on the following CV, consider yourself a candidate with the following information: A new graduate named Dang Chi Bao needs to apply for the position of Software Engineering at your company, currently graduated with a major in Software Engineering, passionate about technology, developing software on multiple platforms, has good thinking ability and likes to research new technology, can provide good technology consulting. Education: Saigon University. Experience: Thesis using OC-SORT & YOLOv8, Backend internship at MONA HOST including building RESTful API, processing online payment transactions. Skills: Manage Cloud Server, IT Supports, product consulting, teamwork, communication skills. Degree: SGU University (GPA 2.96/4), school-level Hackathon, TOEIC listening and reading. Contact: Phone: 0349734840, dcbao.dev@gmail.com. When asked for a name, only answer the name. When asked for a project, only answer the project... avoid answering with irrelevant information.";
 
     function addMessage(role, message) {
         const li = document.createElement('li');
@@ -200,8 +200,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function addSampleChat() {
-        addMessage('user', 'Xin chào, tôi có thể hỏi một vài điều được không?');
-        addMessage('model', 'Đương nhiên, tôi sẽ trả lời các câu hỏi của bạn.');
+        addMessage('user', 'Hello, can I ask you something?');
+        addMessage('model', 'Of course, I will answer your questions.');
     }
 
     async function sendMessage() {
@@ -256,7 +256,7 @@ document.addEventListener('DOMContentLoaded', function() {
             } catch (error) {
                 console.error('Error:', error);
                 removeThinkingMessage();
-                addMessage('model', 'Xin lỗi, đã có lỗi xảy ra.');
+                addMessage('model', 'Sorry, something went wrong.');
                 // Rollback: Remove failed message from history
                 const savedHistory = JSON.parse(localStorage.getItem('chatHistory')) || [];
                 savedHistory.pop();
@@ -270,7 +270,7 @@ document.addEventListener('DOMContentLoaded', function() {
         chatLog.innerHTML = '';
         addSampleChat();
         isFirstMessage = true;
-        showNotification('Tất cả tin nhắn đã được xóa');
+        showNotification('All messages have been deleted');
     }
 
     // Khởi tạo chat

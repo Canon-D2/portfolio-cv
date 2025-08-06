@@ -25,6 +25,8 @@ body {
 	font-style: normal;
 	font-size: 20px;
 	padding-bottom:30px;  /* Khoảng cách từ cuối footer xuống dưới */
+	padding-left: 1vw;
+  	padding-right: 1vw;
 }
 
 a {
@@ -44,6 +46,7 @@ header {
 	margin:auto;
 	border-radius: 20px;
 	border-bottom: 1px solid rgba(0,0,0,0.1);
+	margin-top: 20px;
 
 	.logo-holder {
 		display:flex;
