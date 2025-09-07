@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     { role: 'user', parts: [{ text: message }] }
                 ];
 
-                const response = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyA6A9xHLHlIaULhZHL9u_s1ZjZoF-sPK2M', {
+                const response = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key=AIzaSyA6A9xHLHlIaULhZHL9u_s1ZjZoF-sPK2M', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
