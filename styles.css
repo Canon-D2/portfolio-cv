@@ -992,6 +992,7 @@ h1 small {
 	height: 440px;
 	border-radius: 15px;
 	overflow: hidden;
+	flex: 1
   }
   .map-container iframe {
 	width: 100%;
